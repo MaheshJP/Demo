@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+	<head>
+		<script src="libs/angular.js"></script>
+		<script src="libs/angular-messages.js"></script>
+		<script src="app/app.js"></script>
+	</head>
+	<body>
+		<form name="myForm">
+			<input type="text" name="name" ng-model="MyName" required ng-maxlength="10" ng-minlength="5"/>
+			<div ng-messages="myForm.name.$error" ng-show="myForm.name.$dirty">
+				<div ng-message="required">You did not enter field</div>
+				<div ng-message="maxlength">To max length</div>
+				<div ng-message="minlength">to min length</div>
+			</div>
+		</form>
+	</body>
+</html>
